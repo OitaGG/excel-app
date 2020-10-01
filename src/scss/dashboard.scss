@@ -1,0 +1,100 @@
+@import "variables";
+@import "mixins";
+
+.db {
+  position: relative;
+
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $db-header-height;
+    width: 100%;
+    color: #000;
+    background: #FBF8F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0px 3px 3px 0px rgba(70, 63, 63, 0.5);
+  }
+
+  &__new {
+    position: absolute;
+    top: $db-header-height;
+    left: 0;
+    width: 100%;
+    height: $db-new-height;
+    background: #dadce0;
+    padding: 1.5rem;
+  }
+
+  &__create {
+    width: 160px;
+    height: 160px;
+    border-radius: 4px;
+    border: 1px solid #dadce0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFEEEE;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      color: green;
+      border-color: green;
+    }
+    
+  }
+
+  &__view {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  &__table {
+    padding: 1rem;
+    position: absolute;
+    top: $db-header-height + $db-new-height;
+    left: 0;
+    width: 100%;
+  }
+
+  &__list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000;
+    font-size: 1rem;
+    padding: 0 5px;
+  }
+
+  &__list {
+    @include clear-list;
+    margin-top: 5px;
+  }
+
+  &__record {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      background:#dadce0;
+    }
+  }
+}
